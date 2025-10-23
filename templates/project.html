@@ -1,0 +1,27 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>
+    </head>
+    <body>
+        <h1>projects</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>{{ project.name }}</strong> ({{ project.year }}) - {{ project.description }}
+            </li>
+        {% endfor %}
+    </ul>
+    </body> -->
+
+{% extends "base.html" %} {% block title %}Projects{% endblock %} {% block
+content %}
+<h1>My Projects</h1>
+<ul>
+{% for p in projects %}
+<li><strong>{{ p.name }}</strong> ({{ p.year }}) — {{ p.description }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html> 
+<html lang="en">    
+    <head>        
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <title>my flask site</title>
+    </head>
+     <body>        
+        <h1>Welcome to my Flask site!</h1>        
+        <h2>Hello, {{ student_name }}</h2>  
+        <p>Here are my skills:</p>      
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/about">About</a> | 
+            <a href="/contact">Contact</a>
+            <a href ="/project">Projects</a>
+        </nav>  
+    </body>
+</html> -->
+
+{% extends "base.html" %}
+
+{% block title %}
+Home — {{ person.name }}
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to {{ person.name }}'s Website</h1>
+
+<p>{{ person.bio }}</p>
+
+<h2>Skills</h2>
+<ul>
+    {% for skill in person.skills %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+</ul>
+
+<p>
+    Explore my <a href="{{ url_for('projects') }}">projects</a> or learn more
+    <a href="{{ url_for('about') }}">about me</a>.
+</p>
+{% endblock %}
